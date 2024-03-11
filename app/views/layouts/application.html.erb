@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="vieport" content="width=devise-width, initial-scale=1,maximum-scale=1">
 
     <script src="https://kit.fontawesome.com/6326117fc6.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,36 +13,52 @@
   </head>
 
   <body>
-    <header>
+    <nav class="navbar navbar-expand-lg bg-dark py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <h2 class="text-white pt-1">Bookers</h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
       <% if user_signed_in? %>
-        <li>
+        <li class="nav-item">
           <%= link_to "Home", root_path %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to "Users", user_path(current_user.id) %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to "Books", books_path %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
-      <% else %>
-        <li>
-          <li>
+        <% else %>
+        <li class="av-item">
           <%= link_to "Home", root_path %>
         </li>
-        <li>
+        <li class="av-item">
+          <%= link_to "Books", books_path %>
+        </li>
+        <li class="nav-item">
           <%= link_to "About", about_path %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to "Sign up", new_user_registration_path %>
         </li>
-        <li>
+        <li class="nav-item">
           <%= link_to "Log in", new_user_session_path %>
         </li>
       <% end %>
-    </header>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+  
     <main>
       <% flash.each do |message_type, message| %>
         <div class="flash-message <%= message_type %>"><%= message %></div>

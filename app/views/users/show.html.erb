@@ -4,7 +4,6 @@
 <% @books.each do |book| %>
   <div>
     <%= link_to book_path(book.id) do %>
-      <%= image_tag book.get_image %>
     <p>Title <%= book.title %></p>
     <% end %>
     <p>Opinion<%= book.body %></p>
