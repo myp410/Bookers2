@@ -1,7 +1,7 @@
 <h2>Book detail</h2>
 
 <%= image_tag @book.get_image %>
-<p><%= image_tag 'no_image.jpg' %></p>
+<p><%= image_tag @book.user.get_profile_image(100,100) %></p>
 <p><%= @book.user.name %></p>
 <p>Title<%= @book.title %></p>
 <p>Opinion<%= @book.body %></p>

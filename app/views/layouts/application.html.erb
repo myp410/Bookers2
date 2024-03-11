@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <script src="https://kit.fontawesome.com/6326117fc6.js" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -40,7 +40,7 @@
         <li>
           <%= link_to "Log in", new_user_session_path %>
         </li>
-      <% end %>  
+      <% end %>
     </header>
     <%= yield %>
   </body>
