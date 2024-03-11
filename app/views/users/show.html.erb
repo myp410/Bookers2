@@ -5,7 +5,6 @@
   <div>
     <%= link_to book_path(book.id) do %>
       <%= image_tag book.get_image %>
-    <p><%= image_tag 'no_image.jpg' %></p>
     <p>Title <%= book.title %></p>
     <% end %>
     <p>Opinion<%= book.body %></p>
