@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :is_matching_login_user,only: [:edit, :update]
 
   def after_sign_in_path_for(resource)
-    books_path
+    user_path
   end
 
   def after_sign_out_path_for(resource)
-    about_path
+    root_path
   end
 
   protected
