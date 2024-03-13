@@ -12,16 +12,18 @@ class UsersController < ApplicationController
   end
 
   def edit
+    is_matching_login_user
     @user = User.find(params[:id])
   end
   
   def update
+    is_matching_login_user
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "You have updated user successfully."
       redirect_to user_path(@user.id)
     else
-      flash.now[:alert] = "Failed to updated user."
+      flash.now[:alert] = "An error has occurred."
       render :edit
     end
   end

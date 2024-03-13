@@ -14,7 +14,6 @@
           User info
         </h1>
         <%= form_with model: @user do |f| %>
-        <form>
           <div class="form-group">
             <label for="inputName">Name</label><br>
             <%= f.text_field :name %>
@@ -33,7 +32,6 @@
           <div class="actions">
             <%= f.submit('Update User', class: 'btn btn-secondary btn-sm my-1 mb-5 px-3')  %>
           </div>
-        </form>
         <% end %>
     </div>
   </div>
